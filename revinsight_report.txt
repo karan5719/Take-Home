@@ -1,0 +1,155 @@
+======================================================================
+  REVINSIGHT SALES STAFF OPTIMIZER — ANALYSIS REPORT
+======================================================================
+  Data: 81 months | 16 salespersons tracked
+  Resigned: sale sp12 | Target headcount: 7
+  Salary: 3.0/person/month | Commission: 5% | GM Rate: 50%
+  Net margin rate on sales: 45%
+  Break-even sales/person/month: 6.67
+
+STEP 1 — DATA PROFILE
+----------------------------------------
+Salesperson     Join  Last  Months  Avg Sales  Current?
+  sale sp1         1    66      66      16.48        no
+  sale sp2         1    30      30      11.71        no
+  sale sp3         1    46      46      19.56        no
+  sale sp4         2    35      34      14.34        no
+  sale sp5         2    20      19       9.65        no
+  sale sp6         3    38      36      13.89        no
+  sale sp7         3    57      55      21.21        no
+  sale sp8        20    81      62      12.88       YES
+  sale sp9        30    76      47      13.78        no
+  sale sp10       35    81      47      16.44       YES
+  sale sp11       38    62      25      11.32        no
+  sale sp12       46    81      36      15.47       YES
+  sale sp13       57    81      25       8.66       YES
+  sale sp14       62    81      20      13.12       YES
+  sale sp15       66    81      16       7.19       YES
+  sale sp16       76    81       6       7.80       YES
+
+STEP 2 — SEASONAL INDICES (12-month cycle)
+----------------------------------------
+  Cycle positions where index > 1.0 are HIGH seasons, < 1.0 are LOW.
+  Pos  1: 1.0939  ▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░
+  Pos  2: 0.8649  ▓▓▓▓▓▓▓▓░░░░░░░░░░░░
+  Pos  3: 0.5577  ▓▓▓▓▓░░░░░░░░░░░░░░░
+  Pos  4: 1.1087  ▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░
+  Pos  5: 1.1232  ▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░
+  Pos  6: 0.9110  ▓▓▓▓▓▓▓▓▓░░░░░░░░░░░
+  Pos  7: 1.1748  ▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░
+  Pos  8: 1.0579  ▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░
+  Pos  9: 0.6258  ▓▓▓▓▓▓░░░░░░░░░░░░░░
+  Pos 10: 1.1617  ▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░
+  Pos 11: 1.1481  ▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░
+  Pos 12: 1.1880  ▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░
+
+  Key insight: Cycle pos 3 and 9 are strong dip months (index ~0.56, 0.63).
+  Cycle pos 12, 7, 10, 11 are peak months (index ~1.12–1.19).
+
+STEP 3 — NEW HIRE RAMP-UP CURVE (data-driven)
+----------------------------------------
+  Tenure month 1: 0.4809  █████████
+  Tenure month 2: 0.6243  ████████████
+  Tenure month 3: 0.6923  █████████████
+  Tenure month 4: 0.6750  █████████████
+  Tenure month 5: 0.7133  ██████████████
+  Tenure month 6: 0.7704  ███████████████
+  Interpretation: A new hire in month 1 delivers only ~47% of a
+  veteran's output. They take 6+ months to approach full productivity.
+
+STEP 4 — CURRENT STAFF TALENT SCORES (normalized, detrended, deseasonalized)
+----------------------------------------
+  sale sp10     : 21.633
+  sale sp12     : 19.783 ← RESIGNED
+  sale sp8      : 17.381
+  sale sp14     : 15.602
+  sale sp13     : 10.593
+  sale sp15     : 8.144
+  sale sp16     : 7.998
+  Team average talent: 14.448
+  sp12 vs team average: 19.783 vs 14.448 (ABOVE average by 36.9%)
+
+STEP 5 — 6-MONTH GROSS MARGIN FORECAST BY SCENARIO
+----------------------------------------
+
+  SCENARIO A: No replacement (6 staff)
+   Month  Cyc    Sales  Staff       GM
+      82   10    94.67      6    24.60
+      83   11    93.72      6    24.17
+      84   12    97.14      6    25.71
+      85    1    89.59      6    22.32
+      86    2    70.95      6    13.93
+      87    3    45.83      6     2.62
+                 TOTAL          113.35  ← 6-month GM
+
+  SCENARIO B: Replace immediately (new hire month 82)
+   Month  Cyc    Sales  Staff       GM
+      82   10   102.75      7    25.24
+      83   11   104.11      7    25.85
+      84   12   109.08      7    28.09
+      85    1   100.33      7    24.15
+      86    2    79.94      7    14.97
+      87    3    52.09      7     2.44
+                 TOTAL          120.74  ← 6-month GM
+
+  SCENARIO C: Owner policy (notice overlap → 8 staff month 1, then 7)
+   Month  Cyc    Sales  Staff       GM
+      82   10   125.77      8    32.60
+      83   11   104.11      7    25.85
+      84   12   109.08      7    28.09
+      85    1   100.33      7    24.15
+      86    2    79.94      7    14.97
+      87    3    52.09      7     2.44
+                 TOTAL          128.10  ← 6-month GM
+
+  COMPARISON SUMMARY
+  Scenario A (no replace):   113.35
+  Scenario B (replace):      120.74  (+7.39 vs A)
+  Scenario C (owner policy): 128.10  (+14.75 vs A)
+
+STEP 6 — MARGINAL HEADCOUNT ANALYSIS (is 7 optimal?)
+----------------------------------------
+  Average fully-ramped sales per person (mid-forecast): 17.25/month
+  Break-even sales needed per person: 6.67/month
+  → Each person generates 17.25 >> 6.67 break-even
+
+   Headcount   Monthly GM
+           1         4.76
+           2         9.53  (+4.76)
+           3        14.29  (+4.76)
+           4        19.05  (+4.76)
+           5        23.82  (+4.76)
+           6        28.58  (+4.76)
+           7        33.34  (+4.76)
+           8        38.10  (+4.76)
+           9        42.87  (+4.76)
+          10        47.63  (+4.76)  ← OPTIMAL
+  Data-driven optimal headcount: 10
+
+======================================================================
+  FINAL RECOMMENDATION
+======================================================================
+
+  1. REPLACE sp12? → YES
+     sp12's talent score (19.78) is 37% above team average.
+     Not replacing costs 7.39 in GM over 6 months vs replacing.
+
+  2. FOLLOW THE OVERLAP POLICY (Scenario C)? → YES
+     Scenario C beats B by 7.36 in 6-month GM.
+     The 1-month notice period where sp12 still sells while new hire ramps
+     adds revenue that more than covers the extra month of dual salary.
+
+  3. IS 7-STAFF TARGET OPTIMAL? → NO — data suggests 10 is better
+     Each marginal hire adds 17.25 in sales vs 3.0 salary cost.
+     Net marginal GM per additional person/month = 4.76.
+     As long as marginal GM > 0, adding staff is profitable.
+
+  ASSUMPTIONS MADE:
+  a) New hire talent = current team average (no better, no worse)
+  b) Ramp-up curve is stationary (same shape for future hires as past)
+  c) Seasonal cycle = 12 months, stable across all years
+  d) Store growth trend continues linearly (slope from regression)
+  e) sp12 performs at 100% in notice month (no lame-duck effect)
+  f) Commission is paid on all sales including during ramp-up
+
+======================================================================
